@@ -7,20 +7,14 @@ def inverted?(input_number)
 
     while copy_input_number > 0
       digit_of_number = copy_input_number % 10
-        if(digit_of_number == 6)
-          reverse_number = reverse_number*10 + 9
-        elsif(digit_of_number == 9)
-          reverse_number = reverse_number*10 + 6
-        elsif(digit_of_number == 0)
-          reverse_number = reverse_number*10 + 0
-        elsif(digit_of_number == 1)
-          reverse_number = reverse_number*10 + 1
-        elsif(digit_of_number == 8)
-          reverse_number = reverse_number*10 + 8
-        end 
-       copy_input_number = copy_input_number / 10
+        reverse_number = reverse_number*10 + 9 if(digit_of_number == 6)
+        reverse_number = reverse_number*10 + 6 if(digit_of_number == 9)
+        reverse_number = reverse_number*10 + 0 if(digit_of_number == 0)
+        reverse_number = reverse_number*10 + 1 if(digit_of_number == 1)
+        reverse_number = reverse_number*10 + 8 if(digit_of_number == 8)
+      copy_input_number = copy_input_number / 10
     end
-    
+
   if(input_number == reverse_number)
   return true
   end   
@@ -28,9 +22,7 @@ end
 
 count_inverted_number = 0
 for i in (0..1000) 
-  if inverted?(i)
-    count_inverted_number += 1
-    end  
+  count_inverted_number += 1  if inverted?(i)
   i = i + 1
 end
 puts count_inverted_number
