@@ -21,7 +21,7 @@ def inverted?(input_number)
       elsif(digit_of_number == 8)
         reverse_number = reverse_number*10 + 8
       end 
-            
+
      copy_input_number = copy_input_number / 10
   end
 
@@ -31,10 +31,11 @@ def inverted?(input_number)
 
 end
 
+count_inverted_number = 0
 for i in (0..1000) 
   if inverted?(i)
-    puts i
-  end  
+    count_inverted_number += 1
+    end  
   i = i + 1
 end
-
+puts count_inverted_number
