@@ -1,12 +1,24 @@
-module Print_Module
-  def print_method    #class method in module
-    puts 'heyyyyoooo!'
+module QuizSubject
+  def subject_name    #class method in module
+    puts 'C'
+    puts 'C++'
+    puts 'java'
   end
 end
 
-class Print_class
-  extend Print_Module
+module QuizQuestion
+  def quiz_question_number
+    for i in 1..10
+      puts "Q.#{i}"
+    end
+  end
+
 end
 
-Print_class.print_method # heyyyyoooo!
- #Print_Module.new.foo
+class Quiz
+  extend QuizSubject
+  include QuizQuestion
+end
+
+Quiz.subject_name
+Quiz.new.quiz_question_number
