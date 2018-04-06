@@ -23,6 +23,5 @@ end
 count_inverted_number = 0
 for i in (0..1000) 
   count_inverted_number += 1  if inverted?(i)
-  i = i + 1
 end
 puts count_inverted_number
