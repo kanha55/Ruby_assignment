@@ -1,4 +1,4 @@
-
+  
 def inverted?(input_number)
 
   copy_input_number = input_number
@@ -16,7 +16,7 @@ def inverted?(input_number)
     end
 
   if(input_number == reverse_number)
-  return true
+    return true
   end   
 end
 
